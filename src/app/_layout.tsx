@@ -1,15 +1,17 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router';
-import { useColorScheme } from 'react-native';
+import { GluestackUIProvider } from '@gluestack-ui/themed';
+import { config } from '@gluestack-ui/config';
+import { Stack } from 'expo-router';
 
 import { AnimatedSplashOverlay } from '@/components/animated-icon';
-import AppTabs from '@/components/app-tabs';
+import { TasksProvider } from '@/store/tasks';
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
+export default function RootLayout() {
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <AnimatedSplashOverlay />
-      <AppTabs />
-    </ThemeProvider>
+    <GluestackUIProvider config={config}>
+      <TasksProvider>
+        <Stack screenOptions={{ headerShown: false }} />
+        <AnimatedSplashOverlay />
+      </TasksProvider>
+    </GluestackUIProvider>
   );
 }
