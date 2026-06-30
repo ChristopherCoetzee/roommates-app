@@ -1,9 +1,9 @@
-import { GluestackUIProvider } from '@gluestack-ui/themed';
-import { config } from '@gluestack-ui/config';
-import { Stack } from 'expo-router';
+import { config } from "@gluestack-ui/config";
+import { GluestackUIProvider } from "@gluestack-ui/themed";
+import { Stack } from "expo-router";
 
-import { AnimatedSplashOverlay } from '@/components/animated-icon';
-import { TasksProvider } from '@/store/tasks';
+import { AnimatedSplashOverlay } from "@/components/animated-icon";
+import { TasksProvider } from "@/store/tasks";
 
 export default function RootLayout() {
   return (

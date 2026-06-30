@@ -13,6 +13,7 @@ export interface Task {
   isCustom: boolean;
   createdAt: string;
   completedAt?: string;
+  dueDate?: string; // ISO date YYYY-MM-DD
 }
 
 export const PREDEFINED_CHORES: Array<{ title: string; points: number; category: TaskCategory }> = [

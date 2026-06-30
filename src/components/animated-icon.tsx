@@ -33,6 +33,7 @@ export function AnimatedSplashOverlay() {
 
   return (
     <Animated.View
+      pointerEvents="none"
       entering={splashKeyframe.duration(DURATION).withCallback((finished) => {
         'worklet';
         if (finished) {
